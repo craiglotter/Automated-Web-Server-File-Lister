@@ -1,4 +1,4 @@
-Automated-Web-Server-File-Lister
+Automated Web Server File Lister
 ================================
 
 
