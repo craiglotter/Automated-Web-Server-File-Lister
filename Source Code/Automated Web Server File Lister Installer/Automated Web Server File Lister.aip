@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" version="1.9" modules="professional" RootPath=".">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ProductName" Value="Automated Web Server File Lister"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPCONTACT" Value="0833085018"/>
+    <ROW Property="BannerBitmap" Value="style3red_banner.jpg"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{A430C03C-4CEF-4AAC-B05D-24241F973A4D}"/>
+    <ROW Property="ProductCode" Value="{69AB844B-CA9D-4646-910E-B17A421257BB}"/>
+    <ROW Property="ARPPRODUCTICON" Value="controlPanelIcon.exe"/>
+    <ROW Property="DialogBitmap" Value="style3red_dialog.jpg"/>
+    <ROW Property="Manufacturer" Value="Craig Lotter"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="StartupFolder" Directory_Parent="TARGETDIR" DefaultDir="Startu~1|StartupFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" Directory_Parent="" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Automated_Web_Server_File_Lister.exe" ComponentId="{47594C67-34AD-4160-B1AA-0C3EF39E5908}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Automated_Web_Server_File_Lister.exe" FullKeyPath="TARGETDIR\Automated Web Server File Lister.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Feature_Parent="" Title="MainFeature" Description="Description" Display="2" Level="1" Directory_="TARGETDIR" Attributes="0" Components="Automated_Web_Server_File_Lister.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Automated_Web_Server_File_Lister.exe" Component_="Automated_Web_Server_File_Lister.exe" FileName="Automa~1.exe|Automated Web Server File Lister.exe" Version="" Language="" Attributes="" SourcePath="..\Automated Web Server File Lister\obj\Release\Automated Web Server File Lister.exe" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Source="" Target="A higher version of [ProductName] is installed."/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR" Type="307" Source="TARGETDIR" Target="[ProgramFilesFolder]\[ProductName]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="UpgradeCode" VersionMin="" VersionMax="ProductVersion" Language="" Attributes="1025" Remove=""/>
+    <ROW UpgradeCode="UpgradeCode" VersionMin="ProductVersion" VersionMax="" Language="" Attributes="2" Remove=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Automated_Web_Server_File_Lister" Directory_="SHORTCUTDIR" Name="Automa~1|Automated Web Server File Lister" Component_="Automated_Web_Server_File_Lister.exe" Target="[TARGETDIR]Automated Web Server File Lister.exe" Arguments="" Description="Automatically generates recursive file listings" Hotkey="0" Icon_="controlPanelIcon.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+    <ROW Shortcut="Automated_Web_Server_File_Lister_1" Directory_="StartupFolder" Name="Automa~1|Automated Web Server File Lister" Component_="Automated_Web_Server_File_Lister.exe" Target="[TARGETDIR]Automated Web Server File Lister.exe" Arguments="" Description="" Hotkey="0" Icon_="controlPanelIcon.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+    <ROW Shortcut="Uninstall_Automated_Web_Server_File_Lister" Directory_="SHORTCUTDIR" Name="Uninst~1|Uninstall Automated Web Server File Lister" Component_="Automated_Web_Server_File_Lister.exe" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Description="" Hotkey="0" Icon_="SystemFolder_msiexec.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="SystemFolder_msiexec.exe" SourcePath="&lt;uninstall.ico&gt;" Index="0"/>
+    <ROW Name="controlPanelIcon.exe" SourcePath="Images\AWFSL.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="style3red_banner.jpg" SourcePath="&lt;style3red-banner.jpg&gt;"/>
+    <ROW Name="style3red_dialog.jpg" SourcePath="&lt;style3red-dialog.jpg&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ATTRIBUTE name="Start" value="WelcomeDlg FolderDlg VerifyReadyDlg"/>
+    <ATTRIBUTE name="Progress" value="ProgressDlg"/>
+    <ATTRIBUTE name="End" value="ExitDialog"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMediaComponent">
+    <ATTRIBUTE name="InstallationType" value="1"/>
+    <ATTRIBUTE name="MediaSize" value="0"/>
+    <ATTRIBUTE name="Compress" value="1"/>
+    <ATTRIBUTE name="Package" value="6"/>
+    <ATTRIBUTE name="PackageName" value="Release\Automated Web Server File Lister Installer"/>
+    <ATTRIBUTE name="IconPath" value="Images\AWFSL.ico?0"/>
+  </COMPONENT>
+</DOCUMENT>

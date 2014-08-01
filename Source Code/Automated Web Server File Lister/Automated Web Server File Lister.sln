@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Automated Web Server File Lister", "Automated Web Server File Lister.vbproj", "{0B6D03AA-5A01-4EBB-803B-AAEE7DDA8C91}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0B6D03AA-5A01-4EBB-803B-AAEE7DDA8C91}.Debug.ActiveCfg = Debug|.NET
+		{0B6D03AA-5A01-4EBB-803B-AAEE7DDA8C91}.Debug.Build.0 = Debug|.NET
+		{0B6D03AA-5A01-4EBB-803B-AAEE7DDA8C91}.Release.ActiveCfg = Release|.NET
+		{0B6D03AA-5A01-4EBB-803B-AAEE7DDA8C91}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
